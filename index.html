@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fontaweson-->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Quicksand:wght@300&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+        <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Porfolio</title>
+</head>
+<body>
+
+
+    <!-- ################## NAVIGATION #################### -->
+
+    <nav>
+        <div class="nav-reseaux">
+            <ul>
+                <li>
+                    <a target="_blank" href="#"><i class="fa-brands fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a target="_blank" href="#"><i class="fa-brands fa-github"></i></a>
+                </li>
+                <li>
+                    <a target="_blank" href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a target="_blank" href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="nav-principal">
+            <ul>
+                <li>
+                    <a href="home" class="liens-navigation">Home</a>
+                </li>
+                <li>
+                    <a href="projets" class="liens-navigation">Projets</a>
+                </li>
+                <li>
+                    <a href="porfolio" class="liens-navigation">Portfolio</a>                
+                </li>
+                <li>
+                    <a href="contact" class="liens-navigation">Contact</a>
+                </li>
+            </ul>
+        </div>
+<!-- Rajouter un point vendire qu'on rajoute une classe exemple : div.burger-->
+        <div class="burger">
+
+            <div class="burger-ligne"></div>
+            <div class="burger-ligne"></div>
+        </div>
+    </nav>
+<br>
+
+
+
+<!-- ##################   HEADER  #################### -->
+<header id="home" class="header-home">
+
+    <div class="header-glass">
+
+        <div class="shape"></div>
+        <div class="shape"></div>
+
+
+
+    <h1> Concepteur développeur d'application <span>Mes projets</span> en Alternance </h1>
+    <p>Développeur web | front-end | back-end | full Stack </p>
+
+    <hr> <!-- espace -->
+
+    <h2> BIRAS EMILIE</h2>
+
+
+    <div class="home-btns"><!--contenaire des boutons -->
+        <!--# envoie sur le lien demander-->
+            <a href="#porfolio" class="home-btn home-btn1">Voir portfolio</a> 
+            <a href="#apropos" class="home-btn home-btn2"> A propos</a>
+    
+        </div>
+    </div>    
+
+</header>
+                <div id="haut"></div> <!-- rappel pour le bouton -->
+<!-- ################## A la UNE  #################### -->
+
+
+<section class="alaune">
+
+
+    <div class="alaune-ligne"></div>
+
+
+    <h4>À la une </h4>
+
+
+    <div class="alaune-articles">
+        <article>
+            <a href="#"><img src="../porfolio/src/projet.jpg" alt=""></a>
+            <h5> Mes projets </h5>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit fugiat rem quibusdam distinctio labore? Unde repudiandae, quas ex asperiores animi veniam assumenda soluta dolorem placeat!</p>
+            <a href="#" class="suite-article">Suivre mes projets </a>
+        </article>
+
+        <article>
+                    <a href="#"><img src="../porfolio/src/maquette.jpg" alt=""></a>
+                    <h5> Mes projets </h5>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit fugiat rem quibusdam distinctio labore? Unde
+                        repudiandae, quas ex asperiores animi veniam assumenda soluta dolorem placeat!</p>
+                    <a href="#" class="suite-article">Suivre mes projets </a>
+                
+        </article>
+    </div>
+
+    <div class="alaune-ligne"></div>
+
+</section>
+
+<!-- ################## Section choix#################### -->
+
+<section class="choix">
+    <div class="choix-card">
+        <img src="./src/apropos.png" alt="">
+        <a href="#">À propos de moi</a>
+    </div>
+    <div class="choix-card">
+        <img src="./src/contact.png" alt="">
+        <a href="#"> Contactez moi </a>
+    </div>
+    <div class="choix-card">
+        <img src="./src/projets.png" alt="">
+        <a href="#">Mes projets </a>
+    </div>
+    <div class="choix-card">
+        <img src="./src/portfolio.png" alt="">
+        <a href="#"> Voir mon porfolio</a>
+    </div>
+</section>
+
+<!-- ################## Newsletter #################### -->
+<section id="news" class="newsletter">
+    <div class="newsletter-ligne"></div>
+        <h4>Newsletter</h4>
+        <form action=""> <!-- formulaire -->
+            <label for="mail"> Ne ratez aucuns projets !  </label>
+            <input type="text" id="mail" placeholder="Indiquez votre mail">
+            <button class="new-btn">S'inscrire à la newsletter</button>
+        </form>
+        <div class="newsletter-ligne"></div>
+
+</section>
+
+
+<!-- ################## Porfolio  #################### -->
+
+<div class="alaune-ligne"></div>
+<h4>Porfolio</h4>
+
+
+<section id="porfolio" class="porfolio">
+    
+    <div class="porfolio-card">
+
+    <a href="#"><img src="./src/maquette.jpg" alt=""></a>
+
+    <div class="porfolio-card-infos">
+        <h3>Voir les projets</h3>
+    </div>
+    </div>
+    <div class="porfolio-card">
+    
+        <a href="#"><img src="./src/code.png" alt=""></a>
+    
+        <div class="porfolio-card-infos">
+            <h3>Voir les projets</h3>
+        </div>
+    </div>
+    <div class="porfolio-card">
+    
+        <a href="#"><img src="./src/web.jpg" alt=""></a>
+    
+        <div class="porfolio-card-infos">
+            <h3>Voir les projets</h3>
+        </div>
+    </div>
+
+    <div class="porfolio-card">
+    
+        <a href="#"><img src="./src/web.jpg" alt=""></a>
+    
+        <div class="porfolio-card-infos">
+            <h3>Voir les projets</h3>
+        </div>
+    </div>
+</section>
+
+    <!-- ################## Contact  #################### -->
+
+    <section id="contact">
+
+        <div class="newsletter-ligne"></div>
+
+        <h4>Contact</h4>
+
+        <form action="" class="contact">
+
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" placeholder="Indiquez votre nom">
+
+        <label for="prenom">Prenom</label>
+        <input type="text" id="prenom" placeholder="Indiquez votre nom">
+
+        <label for="mail">Mail</label>
+        <input type="mail" id="mail" placeholder="Indiquez votre mail">
+        
+        <label for="message"> Votre message </label>
+
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+        <button class="home-btn"> Envoyer le message </button>
+    </form>
+    </section>
+</section>
+
+
+<!-- ################## Bouton retour vers le haut  #################### -->
+
+<div class="retourHaut">
+    <p><a href="#haut"><i class="fa-solid fa-arrow-up"></i></a></p>
+</div>
+
+<!-- ################## FOOTER #################### -->
+<footer>
+    <div class="footer-liens">
+        <img src="./src/logo.png" alt="">
+        <p><a href="#"> Mentions légales</a></p>
+        <p><a href="#"> Politique de confidentialité</a></p>
+    </div>
+    <hr>
+    <p>&copy; - Conceptrise d'application en reconvertion - 2023 - Tout droits réservés </p>
+</footer>
+
+
+
+
+
+
+
+
+
+<!-- ################## JAVASCRIPT AVANT LE BODY ET APRES LE HEADER      #################### -->
+
+   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi optio consequatur necessitatibus impedit dolores aut sequi, deleniti minima dicta? Esse suscipit aspernatur, minima repudiandae distinctio reiciendis ratione maxime commodi voluptate qui! Voluptas sapiente perspiciatis vel debitis facilis iusto, vitae id pariatur officiis, facere consequuntur sint repellat nostrum totam temporibus doloribus. Quam, iste. Mollitia ab ipsum molestiae vero expedita consequatur. Dolor sed illo dignissimos? Rerum placeat neque voluptatem animi nam corrupti vero quae repudiandae debitis illum, nulla sit quo repellendus architecto consectetur explicabo nobis aspernatur saepe veritatis. Cupiditate, vero deserunt hic soluta asperiores doloribus dolores nobis, saepe facilis accusantium quae magnam porro a quo mollitia dolorem dignissimos excepturi delectus ad vel id quod sit. Aperiam, consequatur? Aliquam expedita perspiciatis harum tempore adipisci accusamus voluptatem, ratione porro et recusandae numquam consectetur perferendis repellat provident aspernatur, maiores sequi nam voluptatum! Nobis animi doloremque consequatur sequi, tempora exercitationem necessitatibus commodi, debitis blanditiis id non eaque ipsa quod facilis in illum unde beatae earum perferendis. Voluptas possimus repudiandae ipsam ab assumenda atque vel odio reprehenderit non quidem eaque dolorum debitis architecto temporibus inventore at, nam beatae ducimus quo quisquam. Cum ea reiciendis doloremque, perspiciatis possimus eum repellat? Illum ea reiciendis obcaecati ad. Ipsum perspiciatis, explicabo veritatis est modi fugit quidem laudantium, sit reprehenderit dicta architecto cum officiis suscipit obcaecati quisquam necessitatibus sed eius. Autem aspernatur nihil, nisi modi eum ex cum mollitia quas illo deleniti sint, doloremque totam adipisci perspiciatis debitis harum maxime esse, sunt non consectetur. Odio nostrum dolor, exercitationem molestiae sint amet libero natus quibusdam? Molestias nemo labore minima eaque facilis porro? Quibusdam labore quia totam corporis. Reprehenderit sint, illum cumque culpa eos commodi saepe impedit ut. Quaerat, cupiditate. Quos eveniet atque veritatis, at qui eum in sit magnam nobis neque a quas modi laudantium adipisci ratione aliquid incidunt? Magni mollitia voluptates consequatur explicabo, libero cum quo, nam repudiandae ea ex quod repellat ipsam neque iste eveniet, reiciendis id vitae perferendis expedita! Quidem voluptate minus illum exercitationem perferendis numquam id repudiandae hic recusandae. Assumenda sequi distinctio deserunt voluptates sed sit, enim, saepe accusantium officiis tempore tempora nam ut dolores dolorum dolor minima aut iste amet eligendi voluptas itaque maxime reprehenderit? Numquam eveniet laudantium ut sunt quisquam beatae animi veritatis, nam corrupti, error soluta cupiditate esse? Odit deleniti magnam facilis ullam? Et laudantium maiores cum laboriosam atque, perspiciatis aliquid quo illo. Blanditiis unde distinctio ad eaque recusandae nisi, commodi illo neque dolores cumque at consequatur ab, saepe molestias. Reprehenderit ipsum quas quis blanditiis, dolore exercitationem inventore dolorem, ab consectetur fuga nesciunt suscipit, ratione deleniti repellat facilis. Amet, cumque veniam veritatis voluptatibus corporis ducimus corrupti nemo iste, minima itaque odio fugiat obcaecati asperiores enim sunt officiis omnis quaerat, animi sed placeat et! Magni soluta ex vitae quidem asperiores laboriosam numquam nihil error, voluptate veritatis nobis expedita vel hic quasi fuga harum nesciunt magnam ducimus totam quibusdam aliquid. Illum enim dolore odit sunt nobis. Totam fuga vero quis deserunt autem harum officiis dolor quod asperiores id! Beatae impedit, inventore incidunt officiis dolorem, velit voluptatem ducimus in excepturi eum dolores reiciendis vitae perspiciatis nam illum qui at accusantium, deleniti unde eaque optio non quo. Libero explicabo aliquam quod fuga, tempora possimus aut minima deserunt quibusdam consectetur rem earum reprehenderit dolore. Voluptas enim eos voluptatibus commodi tempora quidem repudiandae molestiae, doloremque est officiis nam, corrupti voluptatum ut, ullam possimus? Consectetur obcaecati accusantium vitae architecto delectus pariatur, eligendi ab quisquam optio? Commodi, unde error! Quo itaque omnis, natus laboriosam harum reprehenderit officia neque iure minima incidunt accusantium repellat laborum fugit facilis consectetur, distinctio optio beatae fuga pariatur quisquam nobis dolorum sequi saepe autem. Eveniet praesentium consequatur quasi adipisci rerum.
+<script src="porfolio.js"></script>
+</body>
+</html>

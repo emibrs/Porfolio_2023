@@ -1,0 +1,794 @@
+/* ################## global #################### */
+
+*, ::before, ::after{
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html  {
+    width: 100%;
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    scroll-behavior: smooth;
+
+}
+p, span, a, ul ,li, input, label {
+
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: darkolivegreen;
+}
+
+p {
+    font-size: calc(13px + 0.2vw);
+}
+
+
+h4 {
+    width: 100%;
+    height: 70px;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: calc(20px + 2.5vw);
+    line-height: 70px;
+    margin: 2rem 0;
+}
+
+
+/* ################## NAVIGATION #################### */
+
+nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+    transition: height 0.5s ease-in-out;
+}
+.nav-reseaux { /* icone des reseaux sociaux */
+    margin: 1.5rem 0;
+}
+
+.nav-reseaux ul {  
+
+    list-style-type: none;
+        display: flex;
+
+}
+.nav-reseaux ul li {
+    margin: 0 1rem; /* decoler les icone reseaux */
+}
+.nav-principal ul {
+
+    list-style-type: none;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;   
+    background:  #000000;
+
+
+}
+.nav-principal ul li { /*separer les reseaux */
+    margin: 1rem 0;
+
+}
+.nav-principal a {
+    font-size: 25px;
+    position: absolute;
+    padding: 0.2rem;
+}
+
+.nav-principal a::before {
+
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background:darkolivegreen;
+    border-radius: 5px;
+    transition: width 0.2s ease-in-out;
+
+}
+.nav-principal a::after {
+
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: darkolivegreen;
+    border-radius: 5px;
+    transition: width 0.2s ease-in-out;
+
+}
+.nav-principal a:hover::before,
+.nav-principal a:hover::after {
+    width: 100%;
+}
+
+
+
+/* #######################  JAVASCRIPT #########################################*/
+
+/* classe qu'on vas rajouter a notre code javascript */
+
+
+.nav.active {
+    height: 100vh;
+}
+
+.nav.active ul {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out 0.5s;
+
+}
+
+.nav.fond-scroll {
+    background: darkolivegreen;
+    box-shadow: 0 0 2px 2px rgba(255,255,255,0.2);
+    border-bottom: 1px solid #ffffff;
+}
+
+
+/* #######################  burger  #########################################*/
+
+.burger {   
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    z-index: 60000;
+}
+
+.burger-ligne {
+    width: 100%;
+    height: 5px;
+    Border-radius:5px;
+    background: #f1f1f1;
+    position: absolute;
+    transition: width 0.2s ease-in-out, 
+    top 0.2s ease-in-out,
+    tranform 0.2s ease-in-out 0.2s,
+    background 0.2s ease-in-out 0.2s
+}
+
+.burger-ligne:nth-child(1) { /* ligne 1 des burgers */
+    top: 15px;
+}
+
+
+.burger-ligne:nth-child(2) { /* ligne 1 des burgers */
+    top: 30px;
+}
+
+.burger:hover .burger-ligne:nth-child(1) { /* mettre le curseur et survoler les lignes degrader animations ligne 1 des burgers */
+    width: 90%;
+}
+.burger:hover .burger-ligne:nth-child(2) { /* mettre le curseur et survoler les lignes degrader animations ligne 2 des burgers */
+    width: 70%;
+}
+
+.burger.active .burger-ligne:nth-child(1) {
+    top: 25px;
+    transform: rotate(-130deg);
+    background: darkolivegreen;
+}
+
+.burger.active .burger-ligne:nth-child(2) {
+    top: 25px;
+    transform: rotate(130deg);
+    background: darkolivegreen;
+} 
+
+.burger.active.burger:hover .burger-ligne:nth-child(1),
+.burger.active.burger:hover .burger-ligne:nth-child(2) {
+    width: 100%;
+} /* plus d'animation pour les lignes burgers en width de 100% */
+
+
+/* ################## HEADER #################### */
+
+.header-home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 80px;
+    background: no-repeat center / cover url(./src/premier\ plan.jpg);
+    filter: blur(0.5px);
+    padding-left: 1rem;
+    background-attachment: fixed;
+    -wmso-background-attachment:fixed;
+}
+/*######################GLASSMORPHISME #################*/
+
+/*.header-glass {
+    width: 530px;
+    height: 520px;
+    background-color: rgba(255,255,255,0.1);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border: 1px solid #f1f1f1;
+    border-radius: 10px;
+    backdrop-filter:blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    
+}
+
+
+
+
+
+
+
+.header-glass .shape {
+    height: 200px;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.07);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+
+}
+
+.shape:first-child {
+    background: linear-gradient(
+        #556b2f,
+        #afd174
+    );
+    left: -20px;
+    top: -20px;
+}
+
+.shape {
+    background:linear-gradient(
+       to right,
+        #5f9403,
+        #b2e658
+
+    );
+    right: -200px;
+    bottom: -200px;
+} */
+        /*###################### FIN DE GLASSMORPHISME #################*/
+
+
+.header-home h1 {
+    color: white;
+    font-size: calc(30px + 2.3vw);
+    margin-bottom: 1rem;
+
+}
+.header-home span { 
+    color: darkolivegreen;
+    font-size: calc(30px + 5vw);
+    font-family: 'Dancing Script', cursive;
+}
+
+.header-home h2 {
+
+color: darkolivegreen;
+margin-bottom: 1rem;
+font-size: calc(20px + 1.3vw);
+
+}
+
+.header-home hr {
+
+    border: none;
+    width: 250px;
+    height: 2px;
+    background: darkolivegreen;
+    margin-bottom: 1rem;
+
+}
+.header-home p {
+    margin-bottom: 1rem;
+    color: white;
+}
+.home-btns {
+    width: 100%;
+    height: auto;
+    margin: 2rem 0;
+}
+
+.home-btn {
+    border: 1px solid darkolivegreen;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+}
+.home-btn:hover {
+    color: white;
+}
+
+.home-btn2 {
+    background:darkolivegreen;
+    box-shadow: 0 0 0 0 rgba(252, 160, 160, 0.4 );
+    transition: box-shadow 0.2s ease-in-out;
+
+}
+.home-btn2:hover {
+    box-shadow: 0 0 0 7px rgba(85,107,47,0.4); /* effet flouter du bouton*/
+}
+
+.home-btn1 {
+    box-shadow: 0 0 0 0 rgba(252, 160, 160, 0.4);
+    transition: 0.2s ease-in-out;
+    background:0.2s ease-in-out;
+    margin-right: 1rem;
+}
+.home-btn1:hover {
+    background: rgb(153, 176, 114);
+    box-sizing: 0 0 10px 7px rgba(252,160,160,0.4);
+}
+
+
+/* ################## responsive #################### */
+
+
+@media  screen and (min-width:780px) and (max-width:1200px ) {
+    .home-btn {
+        padding: 0.8rem 1rem;
+    }
+}
+
+/* ################## responsive portable #################### */ 
+
+@media  screen and (max-width: 780px)  {
+    .home-btn {
+        padding: 0.5rem 0.8rem;
+        font-size:14px;
+    }
+
+.header-home {
+    align-items: center;
+    padding-left: 0;
+    text-align: center;
+
+}
+.home-btn {
+    display: flex;
+    justify-content: center;
+}
+}
+
+/* ################## A la une  #################### */
+
+.alaune {
+    width: 100%;
+    height: auto;
+    background: #9caf95;
+    position: relative;
+    z-index: 2;
+
+}
+.alaune::before { /* Ligne vertical droite */
+    content: "";
+    width: 1px;
+    height: 100%;
+    background: darkolivegreen;
+    position: absolute;
+    right: 25%;
+    top: 0;
+    z-index: -1;
+
+}
+.alaune::after{
+    /* Ligne vertical gauche */
+    content: "";
+    width: 1px;
+    height: 100%;
+    background: darkolivegreen;
+    position: absolute;
+    left: 25%;
+    top: 0;
+    z-index: -1;
+
+}
+
+.alaune-ligne { /* ligne du centre */
+    width: 1px;
+    height: 300px;
+    background: darkolivegreen;
+    margin: 0 auto;
+
+}
+.alaune-articles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    flex-direction: column;
+}
+.alaune article { /* je centre les images */
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    padding-bottom: 1rem;
+    box-shadow: 0 0 7px 4px rgba(85, 107, 47, 0.6);
+    transition: transform 0.2s ease-in-out;
+    background: #000;
+    margin-top: 4rem;
+
+}
+
+.suite-article {
+    padding: 0 1rem;
+    display: inline-block;
+    margin: 1rem 0 ;
+    font-size: calc(13px + 0.2vw);
+
+}
+.alaune article h5 { /* centre le titre */
+    text-align: center;
+    padding: 0 1rem;
+    margin: 2rem 0 ;
+    font-size: calc(18px + 0.5vw);
+    color: #556b2f;
+
+}
+
+.alaune article p { /* centre le texte */
+    color: #f1f1f1;
+    padding: 0 1rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.alaune article img { /* cadre et rendre l'image responsive */
+    width: 100%;/* pour une image responsive */
+    height: auto;
+}
+
+@media screen and (max-width:1021px){ /* ligne verticale qui disparaitra en mode portable et apparais en en grand ecran */
+    .alaune::after, .alaune::before {
+        display: none;
+    }
+}
+
+/* ################## Choix  #################### */
+
+.choix { /*Creation de la grille*/
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    background: rgb(68, 78, 51);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+
+}
+.choix img {
+    width: 150px;
+}
+.choix-card {
+    display: flex;
+    justify-content: space-evenly ;
+    align-items: center;
+    flex-direction: column;
+}
+.choix a {
+    font-size: calc(13px + 0.2vw);
+}
+.choix a::hover {
+color: #556b2f;
+}
+
+/* ################## Newsletter #################### */
+
+.newsletter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 1rem;
+    background: #f1f1f1;
+}
+
+.newsletter-ligne {
+    width: 1px;
+    height: 300px;
+    background: darkolivegreen;
+    margin: 0 auto;
+    
+}
+
+.newsletter h4 {
+
+    color: #556b2f;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    margin-top: 1rem;
+
+}
+
+.newsletter form {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     margin: 1rem 0 ;
+}
+
+.newsletter label {
+    display: block;
+    font-size: calc(20px + 1.5vw);
+    margin: 1rem 0;
+    text-align: center;
+
+}
+
+.newsletter input {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+    border:none;
+    outline: none;
+    border-bottom: 1px solid #556b2f;
+    margin: 1rem 0;
+    text-align: center;
+    background: none;
+}
+
+.new-btn {
+    cursor: pointer;
+    font-weight: bold;
+    background:#556b2f;
+    box-shadow: 0 0 0 0 rgb(173,226,226,0.4);
+    border: 1px solid rgba(255,166,0,0);
+    padding: 1rem 2rem ;
+    border-radius: 5px;
+    color: #f1f1f1;
+    font-size: calc(13px + 0.2vw);
+    transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out; 
+    }
+
+.new-btn:hover {
+    background: darkolivegreen;
+    border: 1px solid #556b2f;
+    box-shadow: 0 0 10px 7px rgba(8,67,73,02);
+}
+
+/* ################## Porfolio #################### */
+
+.porfolio {
+    width: 100%;
+    max-width: 1200px;
+    margin: 3rem auto;
+    background: #000000;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    grid-gap: 1rem;
+    padding: 0 1rem;
+}
+
+.porfolio-card {
+    overflow: hidden;/* cacher tout ce qui depasse de la carte */
+    position: relative;
+    box-shadow: 0 0 7px 4px rgba(8,66,73,0.6);
+}
+
+.porfolio-card img {
+    width: 100%;
+    min-width: 100px;
+    height: auto;
+    transition: transform 0.2s ease-in, filter 0.2s ease-in;
+    filter: grayscale();
+    z-index: 2;
+}
+
+.porfolio-card img:hover {
+    transform: scale(1.2);
+    filter: none;
+
+}
+
+.porfolio-card-infos {
+    color:rgba(8,66,73,0.7);
+    font-size: calc(18px + 0.2vw);
+    position: absolute;
+    width: 100%;
+    height: 105px;
+    line-height: 105px;
+    text-align: center;
+    opacity: 0.5;
+    background: rgb(255,255,255,0.8);
+    bottom: -105px;
+    left: 0;
+    pointer-events: none ;
+    cursor: default;
+    right: 0;
+    transition: bottom 0.2s ease-in-out, opacity 0.2s ease-in-out;
+
+}
+
+.porfolio-card:hover .porfolio-card-infos {
+    bottom: 0;
+    opacity: 1;
+}
+
+/* ################## Contact #################### */
+
+#contact {
+    width: 100%;
+    background: #f1f1f1;
+}
+
+#contact h4 {
+    color: #556b2f;
+}
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    color: #333;
+}
+
+
+.contact label {
+    display: block;
+    width: 80%;
+    color: #556b2f;
+    margin: 1rem 0;
+}
+.contact input {
+    width: 80%;
+    background: none;
+    border: none;
+    outline: none;
+    height: 50px;
+    border-bottom: 1px solid #556b2f;
+}
+
+.contact textarea {
+    width: 80%;
+    background: none;
+    outline: none;
+    border: none;
+    height: 100px;
+    border-bottom: 1px solid #556b2f;
+}
+
+.contact button {
+    border: none;
+    background: #556b2f;
+    color: #f1f1f1;
+    font-weight: 700;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out, border 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+.contact button:hover {
+    border: 1px solid #556b2f;
+    background:transparent;
+    color:#556b2f;
+
+}
+/* ################## Bouton retour Haut  #################### */
+
+.retourHaut {
+
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    background: rgba(9,100,95,0.7);
+    font-size: 50px;
+    z-index: 200; /* permets de passer au dessus des éléments */
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 60px ;
+    box-shadow: 0 0 5px 7px rgba(14,118,137,0.2); /* rajouter un effet d'opaciter */
+    opacity: 0;
+    cursor: pointer; 
+    transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+}
+
+.retourHaut {
+
+    background: #556b2f;
+    box-shadow: 0 0 5px 7px rgba(14,118,137,0.2);
+
+}
+
+.retourHaut i {
+
+    font-size: 20px;
+    color: #f1f1f1;
+}
+.retourHaut.active {
+    opacity: 1;
+}
+
+
+
+/* ################## Footer #################### */
+
+footer{
+    width: 100%;
+    height: 300px;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 1rem;
+}
+
+footer img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.footer-liens {
+    width: 100%;
+    text-align: center;
+
+}
+footer hr {
+    border: none;
+    width: 100%;
+    height: 1px;
+    background: #556b2f;
+    margin: 1rem 0;
+}
+
+footer p {
+    color: #f1f1f1;
+    text-align: center;
+    font-size: calc(13px + 0.1vw);
+}
